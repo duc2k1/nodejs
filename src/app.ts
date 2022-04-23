@@ -1,38 +1,14 @@
-import Employee, { Sex } from "./class";
+type strArray = Array<string>;
+type numArray = Array<number>;
 
-function calculateNumber(numberOne: number, numberTwo: number): number {
-  return numberOne + numberTwo;
-}
+const last = (arr: Array<number>) => arr[arr.length - 1];
 
-const numberOne: number = 10;
-const numberTwo: number = 20;
+const l1 = last([1, 2, 3, 4, 9]);
 
-console.log(calculateNumber(numberOne, numberTwo));
+const lastT = <T>(arr: Array<T>) => arr[arr.length - 1];
+const l3 = lastT<number | string>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "sdf"]);
+console.log(l3);
 
-enum Gender {
-  MALE = "MALE",
-  FEMALE = "FEMALE",
-}
-
-type People = {
-  height?: number;
-  weight?: number;
-};
-
-type Student = People & {
-  name?: string;
-  age?: number;
-  sex?: Gender;
-};
-
-const myName: string = "PhanTaiDuc";
-const myAge: number = 1000;
-const myHeight: number = 1.75;
-const myWeight: number = 70;
-const myGender: Gender = Gender.FEMALE;
-const student: Student = {
-  name: "Michanel",
-  height: 100,
-};
-const newEmployee = new Employee("Phan Duc", 100, Sex.FEMALE);
-console.log(newEmployee.name);
+const makeArrXY = <X, Y>(x: X, y: Y) => [x, y];
+const arrXY: Array<number | string> = makeArrXY<number, string>(1, "duc");
+console.log(arrXY);
