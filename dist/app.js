@@ -7,3 +7,4 @@ console.log(l3);
 const makeArrXY = (x, y) => [x, y];
 const arrXY = makeArrXY(1, "duc");
 console.log(arrXY);
+const makeTupleWithDefault = (x, y) => [x, y];

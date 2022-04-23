@@ -12,3 +12,5 @@ console.log(l3);
 const makeArrXY = <X, Y>(x: X, y: Y) => [x, y];
 const arrXY: Array<number | string> = makeArrXY<number, string>(1, "duc");
 console.log(arrXY);
+
+const makeTupleWithDefault = <X, Y = number>(x: X, y: Y): [X, Y] => [x, y];
